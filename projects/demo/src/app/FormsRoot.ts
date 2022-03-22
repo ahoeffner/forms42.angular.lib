@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
+import { FormsModule } from './FormsModule';
 
 @Component({
   selector: 'forms-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 
 export class FormsRoot
 {
+	constructor(viewref:ViewContainerRef)
+	{
+		FormsModule.setViewRef(viewref);
+	}
 }
