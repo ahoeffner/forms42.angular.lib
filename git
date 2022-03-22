@@ -1,0 +1,4 @@
+git branch -m latest version-2.1-dev
+git fetch origin
+git branch -u origin/version-2.1-dev version-2.1-dev
+git remote set-head origin -a
