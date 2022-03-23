@@ -1,7 +1,7 @@
 import { FormsRoot } from './FormsRoot';
 import { FormsModule as CoreModule } from 'forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NO_ERRORS_SCHEMA, NgModule, ViewContainerRef } from '@angular/core';
+import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 
 import { Countries } from './forms/Countries';
 import { PageHeader } from './html/PageHeader';
