@@ -10,21 +10,15 @@
  * accompanied this code).
  */
 
-import { Form as Form42 } from 'forms42core';
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { Form as CoreForm } from 'forms42core';
 
 @Component({template: ''})
 
-export class Form extends Form42 implements OnInit
+export class Form extends CoreForm
 {
-	constructor(private elem:ElementRef)
+	constructor()
 	{
 		super();
-	}
-
-	public ngOnInit() : void
-	{
-		console.log("setPage('"+this.elem.nativeElement.innerHTML+")");
-		this.setPage(this.elem.nativeElement.innerHTML);
 	}
 }

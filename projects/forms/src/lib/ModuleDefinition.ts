@@ -10,19 +10,9 @@
  * accompanied this code).
  */
 
-import { ComponentRef, Directive, Injectable, Type, ViewContainerRef } from "@angular/core";
+import { ModuleDefinition as CoreModuleDefinition, Class, Component} from 'forms42core';
 
-@Directive({})
-@Injectable({providedIn: 'root'})
-
-
-export class Builder
+export const ModuleDefinition = (components:(Class<any> | Component)[]) =>
 {
-    constructor(private viewref:ViewContainerRef) {}
-
-    public createComponent(component:Type<any> | object) : ComponentRef<any>
-    {
-        if (!(component instanceof Type)) component = component.constructor;
-        return(this.viewref.createComponent(component as Type<any>));
-    }
+    return(CoreModuleDefinition(components));
 }

@@ -1,5 +1,3 @@
-import { Form } from './Form';
-import { Builder } from './Builder';
 /*
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 3 only, as
@@ -12,6 +10,8 @@ import { Builder } from './Builder';
  * accompanied this code).
  */
 
+import { Form } from './Form';
+import { Builder } from './Builder';
 import { ComponentFactory } from './ComponentFactory';
 import { NgModule, ViewContainerRef } from '@angular/core';
 import { FormsModule as CoreModule, Properties } from 'forms42core';
@@ -26,15 +26,11 @@ import { FormsModule as CoreModule, Properties } from 'forms42core';
 
 export class FormsModule extends CoreModule
 {
-	constructor()
+	constructor(viewref:ViewContainerRef)
 	{
 		super();
 		Properties.parseTags = false;
 		Properties.parseEvents = false;
-	}
-
-	public static setViewRef(viewref:ViewContainerRef) : void
-	{
 		let builder:Builder = new Builder(viewref);
 		Properties.FactoryImplementationClass = new ComponentFactory(builder);
 	}

@@ -12,17 +12,17 @@
 
 import { Form } from './Form';
 import { Builder } from './Builder';
-import { ComponentRef } from '@angular/core';
 import { Class } from 'forms42core/src/types/Class';
-import { ComponentFactory as Factory, Include} from 'forms42core';
+import { ComponentRef, EmbeddedViewRef } from '@angular/core';
+import { ComponentFactory as CoreFactory, Include} from 'forms42core';
 
-export class ComponentFactory implements Factory
+export class ComponentFactory implements CoreFactory
 {
     constructor(private builder:Builder)
     {
     }
 
-    public createBean(bean: Class<any>)
+    public createBean(bean:Class<any>)
     {
         return(new bean());
     }
@@ -30,11 +30,13 @@ export class ComponentFactory implements Factory
     public createForm(form:Class<Form>) : Form
     {
         let ref:ComponentRef<any> = this.builder.createComponent(form);
+        let view:HTMLElement = (ref.hostView as EmbeddedViewRef<any>).rootNodes[0];
+        (ref.instance as Form).setLayout(view);
         return(ref.instance);
     }
 
-    public createFragment(frag: Class<any>): Include
+    public createFragment(bean:Class<any>): Include
     {
-        throw new Error('Method not used with angular');
+        return(new bean());
     }
 }

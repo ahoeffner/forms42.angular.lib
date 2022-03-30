@@ -4,3 +4,4 @@
 
 export * from './lib/Form';
 export * from './lib/FormsModule';
+export * from './lib/ModuleDefinition';

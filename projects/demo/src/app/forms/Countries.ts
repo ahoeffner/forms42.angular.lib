@@ -9,8 +9,4 @@ import { Component, ElementRef } from '@angular/core';
 
 export class Countries extends BaseForm
 {
-	constructor(elem:ElementRef)
-	{
-		super(elem);
-	}
 }
