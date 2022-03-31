@@ -1,5 +1,5 @@
 import { FormsModule, ModuleDefinition } from 'forms';
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 
 import { Countries } from './forms/Countries';
 
@@ -14,14 +14,22 @@ import { Countries } from './forms/Countries';
 	]
 )
 
-export class Forms extends FormsModule
+export class Forms extends FormsModule implements OnInit
 {
+	private page$:HTMLDivElement = null;
+	@ViewChild("page",{read: ElementRef, static: true}) private pelem:ElementRef;
+
 	constructor(viewref:ViewContainerRef)
 	{
 		super(viewref);
 		//this.test();
 	}
 
+	public ngOnInit(): void
+	{
+		this.page$ = this.pelem.nativeElement;
+		console.log("page: "+this.page$.innerHTML)
+	}
 
 	public test()
 	{

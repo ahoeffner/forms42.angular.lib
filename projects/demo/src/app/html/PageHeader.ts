@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 
 export class PageHeader
 {
-    public showmenu(menu:string) : void
+    public showmenu() : void
     {
         console.log("showmenu");
     }
