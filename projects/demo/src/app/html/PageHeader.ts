@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Main } from '../Main';
 
 @Component({
   selector: 'pageheader',
@@ -8,8 +9,8 @@ import { Component } from '@angular/core';
 
 export class PageHeader
 {
-    public showmenu() : void
+    public showmenu(name:string) : void
     {
-        console.log("showmenu");
+		Main.menu.showmenu(name);
     }
 }

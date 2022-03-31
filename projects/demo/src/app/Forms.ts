@@ -28,7 +28,6 @@ export class Forms extends FormsModule implements OnInit
 	public ngOnInit(): void
 	{
 		this.page$ = this.pelem.nativeElement;
-		console.log("page: "+this.page$.innerHTML)
 	}
 
 	public test()
