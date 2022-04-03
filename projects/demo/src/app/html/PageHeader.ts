@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
 import { Main } from '../Main';
+import { Menu } from '../menus/Menu';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'pageheader',
@@ -9,8 +10,8 @@ import { Main } from '../Main';
 
 export class PageHeader
 {
-    public showmenu(name:string) : void
+    public get menu() : Menu
     {
-		Main.menu.showmenu(name);
+		  return(Main.menu);
     }
 }

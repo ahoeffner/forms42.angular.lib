@@ -6,12 +6,13 @@ import { Menu } from './menus/Menu';
 import { Countries } from './forms/Countries';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
+import { FormHeader } from './html/FormHeader';
 
 
 @NgModule({
 	imports:      [BrowserModule],
 	bootstrap:    [Forms], schemas: [NO_ERRORS_SCHEMA],
-	declarations: [Forms, Menu, PageHeader, PageFooter, Countries]
+	declarations: [Forms, Menu, PageHeader, PageFooter, FormHeader, Countries]
 })
 
 
