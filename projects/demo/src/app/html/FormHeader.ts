@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BaseForm } from '../forms/BaseForm';
 
 @Component({
   selector: 'formheader',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
 
 export class FormHeader
 {
-    
+    public form:BaseForm = null;
+
+    constructor()
+    {
+		this.form = BaseForm.current;
+    }
 }

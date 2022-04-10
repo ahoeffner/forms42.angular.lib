@@ -35,6 +35,7 @@ export class ComponentFactory implements CoreFactory
         return(ref.instance);
     }
 
+
     public createFragment(bean:Class<any>): Include
     {
         return(new bean());

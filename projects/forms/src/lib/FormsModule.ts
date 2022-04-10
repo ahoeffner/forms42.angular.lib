@@ -26,6 +26,12 @@ import { FormsModule as CoreModule, Properties } from 'forms42core';
 
 export class FormsModule extends CoreModule
 {
+	public static override get() : FormsModule
+	{
+		return(CoreModule.get() as FormsModule);
+	}
+
+
 	constructor(viewref:ViewContainerRef)
 	{
 		super();
