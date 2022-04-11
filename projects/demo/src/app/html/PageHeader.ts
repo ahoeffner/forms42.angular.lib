@@ -12,6 +12,6 @@ export class PageHeader
 {
     public get menu() : Menu
     {
-		  return(Main.menu);
+		return(Main.menu);
     }
 }

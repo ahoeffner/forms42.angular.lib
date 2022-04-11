@@ -1,6 +1,7 @@
 import { Form } from 'forms';
 import { View } from 'forms42core';
 import { Component } from '@angular/core';
+import { Main } from '../Main';
 
 @Component({template: ''})
 
@@ -12,14 +13,12 @@ export class BaseForm extends Form
     private static forms:number = 0;
 	public static current:BaseForm = null;
 
-
 	constructor()
 	{
 		super();
 		BaseForm.current = this;
         this.id = "f" + ++BaseForm.forms;
 	}
-
 
     public toggle() : void
     {
@@ -44,6 +43,17 @@ export class BaseForm extends Form
 
 	public minimize() : void
     {
+		Main.list.add(this);
+		this.hide();
+    }
 
+    public hide() : void
+    {
+        this.canvas.remove();
+    }
+
+    public show() : void
+    {
+        this.canvas.restore();
     }
 }

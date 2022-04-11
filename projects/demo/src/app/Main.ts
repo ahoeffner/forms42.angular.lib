@@ -19,4 +19,5 @@ import { FormHeader } from './html/FormHeader';
 export class Main
 {
 	public static menu:Menu = null;
+	public static list:PageFooter = null;
 }
