@@ -1,4 +1,6 @@
-import { Main } from "../Main";
+import { Angular } from "../Angular";
+import { Denmark } from "./Denmark";
+import { MenuHandler } from "forms42core";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 @Component({
@@ -9,15 +11,16 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 export class Menu implements OnInit
 {
-	private disp:boolean = false;
-	private menu:HTMLDivElement = null;
+	private menu:boolean = false;
+	private handler:MenuHandler = null;
+	private menuelem:HTMLDivElement = null;
 
   	private attributes$:Map<string,string> = new Map<string,string>();
 	@ViewChild("menu",{read: ElementRef, static: true}) private melem:ElementRef;
 
 	constructor(elem:ElementRef)
 	{
-		Main.menu = this;
+		Angular.menu = this;
 
 		let tag:HTMLElement = elem.nativeElement;
 		tag.getAttributeNames().forEach((attr:string) =>
@@ -33,24 +36,26 @@ export class Menu implements OnInit
 
 	public ngOnInit(): void
 	{
-		this.menu = this.melem.nativeElement;
-		let tag:HTMLElement = this.menu.parentElement;
+		this.menuelem = this.melem.nativeElement;
+		let tag:HTMLElement = this.menuelem.parentElement;
 
 		let parent:HTMLElement = tag.parentElement;
 
 		tag.remove();
-		this.menu = document.createElement("div");
+		this.menuelem = document.createElement("div");
 
 		this.attributes$.forEach((attr,name) =>
-		{this.menu.setAttribute(name,attr);});
+		{this.menuelem.setAttribute(name,attr);});
 
-		parent.appendChild(this.menu);
+		parent.appendChild(this.menuelem);
+		this.handler = new MenuHandler(new Denmark(), this.menuelem);
 	}
 
-	public showmenu(name:string) : void
+	public showmenu() : void
 	{
-		if (this.disp) this.menu.firstChild.remove();
-		else this.menu.appendChild(document.createTextNode("show menu: "+name));
-		this.disp = !this.disp;
+        if (this.menu) this.handler.hide();
+        else 		   this.handler.show();
+
+        this.menu = !this.menu;
 	}
 }

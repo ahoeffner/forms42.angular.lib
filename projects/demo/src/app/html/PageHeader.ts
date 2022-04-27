@@ -1,5 +1,4 @@
-import { Main } from '../Main';
-import { Menu } from '../menus/Menu';
+import { Include } from 'forms42core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,11 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './PageHeader.html'
 })
 
-
-export class PageHeader
+export class PageHeader extends Include
 {
-    public get menu() : Menu
-    {
-		return(Main.menu);
-    }
 }

@@ -36,8 +36,11 @@ export class ComponentFactory implements CoreFactory
     }
 
 
-    public createFragment(bean:Class<any>): Include
+    public createFragment(bean:Class<any>) : Include
     {
-        return(new bean());
+        let ref:ComponentRef<any> = this.builder.createComponent(bean);
+        let view:HTMLElement = (ref.hostView as EmbeddedViewRef<any>).rootNodes[0];
+        (ref.instance as Include).content = view;
+        return(ref.instance);
     }
 }

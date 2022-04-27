@@ -1,23 +1,49 @@
-import { Forms } from './Forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule, ModuleDefinition } from 'forms';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
-import { Menu } from './menus/Menu';
+import { Menu } from './Menu';
+import { Minimized } from './Minimized';
 import { Countries } from './forms/Countries';
-import { PageHeader } from './html/PageHeader';
-import { PageFooter } from './html/PageFooter';
 import { FormHeader } from './html/FormHeader';
+import { PageFooter } from './html/PageFooter';
+import { PageHeader } from './html/PageHeader';
 
-
-@NgModule({
-	imports:      [BrowserModule],
-	bootstrap:    [Forms], schemas: [NO_ERRORS_SCHEMA],
-	declarations: [Forms, Menu, PageHeader, PageFooter, FormHeader, Countries]
+@Component({
+  selector: 'forms-root',
+  templateUrl: './Forms.html'
 })
 
+@ModuleDefinition(
+	[
+        {class: Countries, path: "/countries"},
+        {class: FormHeader, path: "/html/formheader"},
+        {class: PageHeader, path: "/html/pageheader"},
+        {class: PageFooter, path: "/html/pagefooter"},
+	]
+)
 
-export class Main
+export class Main extends FormsModule implements OnInit
 {
-	public static menu:Menu = null;
-	public static list:PageFooter = null;
+    public menu:Menu = null;
+    public list:Minimized = null;
+
+	constructor(public viewref:ViewContainerRef)
+	{
+		super(viewref);
+	}
+
+	public ngOnInit(): void
+	{
+		let doc:HTMLElement = this.viewref.element.nativeElement as HTMLElement;
+		let root:HTMLElement = doc.querySelector(".form-area");
+		
+		this.list = new Minimized(doc);
+		this.setRootElement(root);
+		this.test();
+	}
+
+	public test()
+	{
+		Main.get().getApplication().showform("/countries");
+	}
 }

@@ -1,7 +1,7 @@
 import { Form } from 'forms';
+import { Angular } from '../Angular';
 import { View } from 'forms42core';
 import { Component } from '@angular/core';
-import { Main } from '../Main';
 
 @Component({template: ''})
 
@@ -43,8 +43,8 @@ export class BaseForm extends Form
 
 	public minimize() : void
     {
-		Main.list.add(this);
-		this.hide();
+		//Main.list.add(this);
+		//this.hide();
     }
 
     public hide() : void

@@ -35,8 +35,6 @@ export class FormsModule extends CoreModule
 	constructor(viewref:ViewContainerRef)
 	{
 		super();
-		Properties.parseTags = false;
-		Properties.parseEvents = false;
 		let builder:Builder = new Builder(viewref);
 		Properties.FactoryImplementationClass = new ComponentFactory(builder);
 	}
