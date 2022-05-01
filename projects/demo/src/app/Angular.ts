@@ -1,4 +1,4 @@
-import { Main } from './Main';
+import { Forms } from './Forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 
@@ -7,10 +7,10 @@ import { Countries } from './forms/Countries';
 
 
 @NgModule({
-	bootstrap		: [Main],
+	bootstrap		: [Forms],
 	imports			: [BrowserModule],
 	schemas			: [NO_ERRORS_SCHEMA],
-	declarations	: [Main, Countries]
+	declarations	: [Forms, Countries]
 })
 
 

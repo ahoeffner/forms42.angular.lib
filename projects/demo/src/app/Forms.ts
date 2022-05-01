@@ -22,7 +22,7 @@ import { PageHeader } from './html/PageHeader';
 	]
 )
 
-export class Main extends FormsModule implements OnInit
+export class Forms extends FormsModule implements OnInit
 {
     public menu:Menu = null;
     public list:Minimized = null;
@@ -46,6 +46,6 @@ export class Main extends FormsModule implements OnInit
 
 	public test()
 	{
-		Main.get().getApplication().showform("/countries");
+		Forms.get().getApplication().showform("/countries");
 	}
 }
