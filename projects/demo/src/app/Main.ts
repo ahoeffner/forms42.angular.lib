@@ -35,10 +35,12 @@ export class Main extends FormsModule implements OnInit
 	public ngOnInit(): void
 	{
 		let doc:HTMLElement = this.viewref.element.nativeElement as HTMLElement;
-		let root:HTMLElement = doc.querySelector(".form-area");
-		
+		this.setRootElement(doc);
+
+		this.parse();
+        this.menu = new Menu();
 		this.list = new Minimized(doc);
-		this.setRootElement(root);
+
 		this.test();
 	}
 
