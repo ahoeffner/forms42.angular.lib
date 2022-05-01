@@ -35,6 +35,7 @@ export class FormsModule extends CoreModule
 	constructor(viewref:ViewContainerRef)
 	{
 		super();
+		Properties.EventPrefix = "frm.";
 		let builder:Builder = new Builder(viewref);
 		Properties.FactoryImplementationClass = new ComponentFactory(builder);
 	}
