@@ -15,6 +15,10 @@ import { Form as CoreForm } from 'forms42core';
 
 @Component({template: ''})
 
+/*
+ * The setLayout is called from component factory
+ */
+
 export class Form extends CoreForm
 {
 	constructor()
