@@ -1,6 +1,7 @@
 import { Forms } from './Forms';
+import { FormTags } from 'forms';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 
 import { Countries } from './forms/Countries';
 
@@ -8,16 +9,11 @@ import { Countries } from './forms/Countries';
 
 @NgModule({
 	bootstrap		: [Forms],
-	imports			: [BrowserModule],
-	schemas			: [NO_ERRORS_SCHEMA],
+	imports			: [BrowserModule, FormTags],
 	declarations	: [Forms, Countries]
 })
 
 
 export class Angular
 {
-	constructor()
-	{
-		console.log("new Angular")
-	}
 }

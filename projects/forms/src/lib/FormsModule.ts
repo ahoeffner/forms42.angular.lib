@@ -10,18 +10,10 @@
  * accompanied this code).
  */
 
-import { Form } from './Form';
 import { Builder } from './Builder';
 import { ComponentFactory } from './ComponentFactory';
-import { NgModule, ViewContainerRef } from '@angular/core';
+import { ViewContainerRef } from '@angular/core';
 import { FormsModule as CoreModule, Properties } from 'forms42core';
-
-
-@NgModule({
-  declarations: [Form],
-  imports:      [],
-  exports:      [Form]
-})
 
 
 export class FormsModule extends CoreModule

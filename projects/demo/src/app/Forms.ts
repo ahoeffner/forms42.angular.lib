@@ -34,12 +34,9 @@ export class Forms extends FormsModule implements OnInit
 
 	public ngOnInit(): void
 	{
-		let doc:HTMLElement = this.viewref.element.nativeElement as HTMLElement;
-		this.setRootElement(doc);
-
 		this.parse();
         this.menu = new Menu();
-		this.list = new Minimized(doc);
+		this.list = new Minimized();
 
 		this.test();
 	}

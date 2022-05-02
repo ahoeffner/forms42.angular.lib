@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 
 export class Countries extends BaseForm
 {
+	public override title:string = "Countries";
 }

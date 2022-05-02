@@ -6,11 +6,10 @@ export class Minimized implements EventListenerObject
     private icon:HTMLImageElement = null;
     private forms:Map<string,Form> = new Map<string,Form>();
 
-    constructor(doc:HTMLElement)
+    constructor()
     {
-        //this.list = doc.getElementById("form-list");
-        //this.icon = this.list.querySelector("img");
-		//console.log("Minimized: "+this.list);
+        this.list = document.getElementById("form-list");
+        this.icon = this.list.querySelector("img");
     }
 
     public add(form:Form) : void
