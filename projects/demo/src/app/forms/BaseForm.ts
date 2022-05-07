@@ -79,6 +79,7 @@ export class BaseForm extends Form
 
     public setTitle(title:string) : void
     {
+		console.log("form: "+this.getLayout().constructor.name)
         let header:HTMLElement = this.getLayout().querySelector("[name='title']");
         header.appendChild(document.createTextNode(title));
     }
