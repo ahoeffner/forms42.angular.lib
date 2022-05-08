@@ -34,6 +34,8 @@ export class Form extends CoreForm
 		}
 		else
 		{
+			// Trim and get rid of angular custom tag
+			
 			let element:HTMLElement = document.createElement('div');
 			element.innerHTML = page.innerHTML;
 
