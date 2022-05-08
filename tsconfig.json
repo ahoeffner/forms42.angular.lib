@@ -8,9 +8,9 @@
     "strict": false,
     "noImplicitOverride": true,
     "paths": {
-      "forms": [
-        "dist/forms/forms",
-        "dist/forms"
+      "forms42angular": [
+        "dist/forms42angular/forms42angular",
+        "dist/forms42angular"
       ]
     },
     "noPropertyAccessFromIndexSignature": true,

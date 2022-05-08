@@ -15,6 +15,7 @@ import { ComponentFactory } from './ComponentFactory';
 import { ViewContainerRef } from '@angular/core';
 import { FormsModule as CoreModule, Properties } from 'forms42core';
 
+Properties.AttributePrefix = "frm.";
 
 export class FormsModule extends CoreModule
 {
@@ -27,7 +28,6 @@ export class FormsModule extends CoreModule
 	constructor(viewref:ViewContainerRef)
 	{
 		super();
-		Properties.EventPrefix = "frm.";
 		let builder:Builder = new Builder(viewref);
 		Properties.FactoryImplementationClass = new ComponentFactory(builder);
 	}

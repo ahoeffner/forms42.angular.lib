@@ -1,4 +1,4 @@
-import { Angular } from "../Angular";
+import { AngularModule } from "../AngularModule";
 import { Denmark } from "./Denmark";
 import { MenuHandler } from "forms42core";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
@@ -20,7 +20,7 @@ export class Menu implements OnInit
 
 	constructor(elem:ElementRef)
 	{
-		Angular.menu = this;
+		AngularModule.menu = this;
 
 		let tag:HTMLElement = elem.nativeElement;
 		tag.getAttributeNames().forEach((attr:string) =>

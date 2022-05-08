@@ -1,6 +1,6 @@
-import { Forms } from './Forms';
-import { FormTags } from 'forms';
+import { FormTags } from 'forms42angular';
 import { NgModule } from '@angular/core';
+import { FormsModule } from './FormsModule';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { Countries } from './forms/Countries';
@@ -8,12 +8,12 @@ import { Countries } from './forms/Countries';
 
 
 @NgModule({
-	bootstrap		: [Forms],
+	bootstrap		: [FormsModule],
 	imports			: [BrowserModule, FormTags],
-	declarations	: [Forms, Countries]
+	declarations	: [FormsModule, Countries]
 })
 
 
-export class Angular
+export class AngularModule
 {
 }

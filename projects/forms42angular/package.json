@@ -1,5 +1,5 @@
 {
-  "name": "forms",
+  "name": "forms42angular",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^13.2.0",

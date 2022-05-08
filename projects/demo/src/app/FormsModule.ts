@@ -1,8 +1,10 @@
-import { FormsModule, ModuleDefinition } from 'forms';
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { FormsModule as FormsCoreModule, ModuleDefinition } from 'forms42angular';
 
 import { Menu } from './Menu';
 import { Minimized } from './Minimized';
+import { Properties } from 'forms42core';
+
 import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageFooter } from './html/PageFooter';
@@ -10,7 +12,7 @@ import { PageHeader } from './html/PageHeader';
 
 @Component({
   selector: 'forms-root',
-  templateUrl: './Forms.html'
+  templateUrl: './Main.html'
 })
 
 @ModuleDefinition(
@@ -22,7 +24,7 @@ import { PageHeader } from './html/PageHeader';
 	]
 )
 
-export class Forms extends FormsModule implements OnInit
+export class FormsModule extends FormsCoreModule implements OnInit
 {
     public menu:Menu = null;
     public list:Minimized = null;
@@ -30,6 +32,7 @@ export class Forms extends FormsModule implements OnInit
 	constructor(public viewref:ViewContainerRef)
 	{
 		super(viewref);
+		Properties.AttributePrefix = "frm.";
 	}
 
 	public ngOnInit(): void
@@ -43,6 +46,6 @@ export class Forms extends FormsModule implements OnInit
 
 	public test()
 	{
-		Forms.get().getApplication().showform("/countries");
+		FormsModule.get().getApplication().showform("/countries");
 	}
 }
