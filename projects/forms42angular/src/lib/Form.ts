@@ -25,4 +25,19 @@ export class Form extends CoreForm
 	{
 		super();
 	}
+
+	public override setLayout(page:string|HTMLElement) : void
+	{
+		if (typeof page === 'string')
+		{
+			super.setLayout(page);
+		}
+		else
+		{
+			let element:HTMLElement = document.createElement('div');
+			element.innerHTML = page.innerHTML;
+			console.log(page.nodeName+" "+element.nodeName)
+			super.setLayout(element);
+		}
+	}
 }
