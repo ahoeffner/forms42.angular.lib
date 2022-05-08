@@ -36,8 +36,24 @@ export class Form extends CoreForm
 		{
 			let element:HTMLElement = document.createElement('div');
 			element.innerHTML = page.innerHTML;
-			console.log(page.nodeName+" "+element.nodeName)
+
+			let remove:number[] = [];
+
+			for(let i=0; i < element.childNodes.length; i++)
+			{
+				let node:Node = element.childNodes.item(i);
+				if (node.nodeType == Node.TEXT_NODE && node.textContent.trim() == "")
+					remove.unshift(i);
+			}
+
+			for(let i=0; i < remove.length; i++)
+				element.childNodes.item(remove[i]).remove();
+
+			if (element.childNodes.length == 1)
+				element = element.childNodes.item(0) as HTMLElement;
+
 			super.setLayout(element);
+			page.remove();
 		}
 	}
 }
