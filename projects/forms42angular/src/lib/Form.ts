@@ -26,16 +26,16 @@ export class Form extends CoreForm
 		super();
 	}
 
-	public override setLayout(page:string|HTMLElement) : void
+	public override setView(page:string|HTMLElement) : void
 	{
 		if (typeof page === 'string')
 		{
-			super.setLayout(page);
+			super.setView(page);
 		}
 		else
 		{
 			// Trim and get rid of angular custom tag
-			
+
 			let element:HTMLElement = document.createElement('div');
 			element.innerHTML = page.innerHTML;
 
@@ -54,7 +54,7 @@ export class Form extends CoreForm
 			if (element.childNodes.length == 1)
 				element = element.childNodes.item(0) as HTMLElement;
 
-			super.setLayout(element);
+			super.setView(element);
 			page.remove();
 		}
 	}

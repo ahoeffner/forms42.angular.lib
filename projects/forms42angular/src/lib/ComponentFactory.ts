@@ -31,7 +31,7 @@ export class ComponentFactory implements CoreFactory
     {
         let ref:ComponentRef<any> = this.builder.createComponent(form);
         let view:HTMLElement = (ref.hostView as EmbeddedViewRef<any>).rootNodes[0];
-        (ref.instance as Form).setLayout(view);
+        (ref.instance as Form).setView(view);
         return(ref.instance);
     }
 
