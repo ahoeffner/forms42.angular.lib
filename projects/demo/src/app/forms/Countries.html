@@ -1,29 +1,52 @@
 <div name="form">
     <include src="/html/formheader"></include>
 
-    <div style="display: flex; min-width: 400px; min-height: 200px; width: 100%; height: 100%; justify-content: center;">
+	<button frm.click="this.test()">Test</button>
+
+    <div style="display: flex; min-width: 500px; min-height: 200px; width: 100%; height: 100%; justify-content: center;">
         <div>
 			<table>
 				<tr>
-					<th>Id</th>
 					<th>Code</th>
 					<th>Name</th>
 				</tr>
 
 				<tr frm.for="row in 1..5" class="block">
 					<td>
-						<field id="id$row" name="country_id"   block="countries" row="$row" type="x-int"  class="cfld"></field>
+						<input id="cc$row" name="country_code" block="countries" row="$row" type="x-fixed" x-pattern="{2A} - {2#}">
 					</td>
 
 					<td>
-						<field id="cc$row" name="country_code" block="countries" row="$row" type="x-fixed" x-pattern="{2A} - {2#}" class="cfld"></field>
-					</td>
-
-					<td>
-						<field id="cn$row" name="country_name" block="countries" row="$row" type="x-int"  class="cfld"></field>
+						<input id="cn$row" name="country_name" block="countries" row="$row" style="display: inline-block;">
 					</td>
 				</tr>
 			</table>
     	</div>
+
+		<div style="margin-left: 20px;">
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th>Id</th>
+					<td>
+						<input id="id" name="country_id" block="countries" type="x-int">
+					</td>
+				</tr>
+				<tr>
+					<th>Code</th>
+					<td>
+						<input id="cc" disabled name="country_code" block="countries" type="x-fixed" x-pattern="{2A} - {2#}">
+					</td>
+				</tr>
+				<tr>
+					<th>Name</th>
+					<td>
+						<input id="cn" name="country_name" block="countries">
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>
