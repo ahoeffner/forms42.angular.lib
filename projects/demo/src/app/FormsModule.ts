@@ -3,7 +3,6 @@ import { FormsModule as FormsCoreModule, FormsPathMapping } from 'forms42angular
 
 import { Menu } from './Menu';
 import { Minimized } from './Minimized';
-import { Properties } from 'forms42core';
 
 import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
