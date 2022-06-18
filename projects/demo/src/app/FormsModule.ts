@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { FormsModule as FormsCoreModule, ModuleDefinition } from 'forms42angular';
+import { FormsModule as FormsCoreModule, FormsPathMapping } from 'forms42angular';
 
 import { Menu } from './Menu';
 import { Minimized } from './Minimized';
@@ -15,7 +15,7 @@ import { PageHeader } from './html/PageHeader';
   templateUrl: './Main.html'
 })
 
-@ModuleDefinition(
+@FormsPathMapping(
 	[
         {class: Countries, path: "/countries"},
         {class: FormHeader, path: "/html/formheader"},
@@ -32,7 +32,6 @@ export class FormsModule extends FormsCoreModule implements OnInit
 	constructor(public viewref:ViewContainerRef)
 	{
 		super(viewref);
-		Properties.AttributePrefix = "frm.";
 	}
 
 	public ngOnInit(): void
@@ -46,6 +45,6 @@ export class FormsModule extends FormsCoreModule implements OnInit
 
 	public test()
 	{
-		FormsModule.get().getApplication().showform("/countries");
+		FormsModule.get().getApplication().showform(Countries);
 	}
 }

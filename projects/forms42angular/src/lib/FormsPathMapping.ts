@@ -10,9 +10,9 @@
  * accompanied this code).
  */
 
-import { ModuleDefinition as CoreModuleDefinition, Class, Component} from 'forms42core';
+import { FormsPathMapping as CoreFormsPathMapping, Class, Component} from 'forms42core';
 
-export const ModuleDefinition = (components:(Class<any> | Component)[]) =>
+export const FormsPathMapping = (components:(Class<any> | Component)[]) =>
 {
-    return(CoreModuleDefinition(components));
+    return(CoreFormsPathMapping(components));
 }

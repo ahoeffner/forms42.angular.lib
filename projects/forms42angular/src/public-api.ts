@@ -5,7 +5,7 @@
 export * from './lib/Form';
 export * from './lib/FormTags';
 export * from './lib/FormsModule';
-export * from './lib/ModuleDefinition';
+export * from './lib/FormsPathMapping';
 
 export * from './lib/tags/Root';
 export * from './lib/tags/Field';
