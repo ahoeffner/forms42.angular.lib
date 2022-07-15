@@ -9,6 +9,7 @@ import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageFooter } from './html/PageFooter';
 import { PageHeader } from './html/PageHeader';
+import { TrueFalseMapper } from './forms/TrueFalseMapper';
 
 @Component({
   selector: 'forms-root',
@@ -22,6 +23,7 @@ import { PageHeader } from './html/PageHeader';
         {class: FormHeader, path: "/html/formheader"},
         {class: PageHeader, path: "/html/pageheader"},
         {class: PageFooter, path: "/html/pagefooter"},
+        {class: TrueFalseMapper, path: "/mappers/truefalse"},
 	]
 )
 
