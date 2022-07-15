@@ -26,7 +26,7 @@ export class Form extends CoreForm
 		super();
 	}
 
-	public override setView(page:string|HTMLElement) : void
+	public override async setView(page:string|HTMLElement) : Promise<void>
 	{
 		if (typeof page === 'string')
 		{

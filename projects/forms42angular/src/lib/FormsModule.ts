@@ -11,8 +11,8 @@
  */
 
 import { Builder } from './Builder';
-import { ComponentFactory } from './ComponentFactory';
 import { ViewContainerRef } from '@angular/core';
+import { ComponentFactory } from './ComponentFactory';
 import { FormsModule as CoreModule, Properties } from 'forms42core';
 
 Properties.AttributePrefix = "frm.";

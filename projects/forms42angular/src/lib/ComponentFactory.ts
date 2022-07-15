@@ -27,11 +27,11 @@ export class ComponentFactory implements CoreFactory
         return(new bean());
     }
 
-    public createForm(form:Class<Form>) : Form
+    public async createForm(form:Class<Form>) : Promise<Form>
     {
         let ref:ComponentRef<any> = this.builder.createComponent(form);
         let view:HTMLElement = (ref.hostView as EmbeddedViewRef<any>).rootNodes[0];
-        (ref.instance as Form).setView(view);
+        await (ref.instance as Form).setView(view);
         return(ref.instance);
     }
 

@@ -4,6 +4,7 @@ import { FormsModule as FormsCoreModule, FormsPathMapping } from 'forms42angular
 import { Menu } from './Menu';
 import { Minimized } from './Minimized';
 
+import { Fields } from './forms/Fields';
 import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageFooter } from './html/PageFooter';
@@ -16,6 +17,7 @@ import { PageHeader } from './html/PageHeader';
 
 @FormsPathMapping(
 	[
+        {class: Fields, path: "/fields"},
         {class: Countries, path: "/countries"},
         {class: FormHeader, path: "/html/formheader"},
         {class: PageHeader, path: "/html/pageheader"},
@@ -44,6 +46,6 @@ export class FormsModule extends FormsCoreModule implements OnInit
 
 	public test()
 	{
-		FormsModule.get().getApplication().showform(Countries);
+		FormsModule.get().getApplication().showform(Fields);
 	}
 }
