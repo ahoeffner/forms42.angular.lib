@@ -18,7 +18,7 @@ export class BaseForm extends Form
 	{
 		super();
         this.id = "f" + ++BaseForm.forms;
-		this.addEventListener(this.oninit,{type: EventType.FormInit});
+		this.addEventListener(this.oninit,{type: EventType.PostViewInit});
 	}
 
     public oninit() : void

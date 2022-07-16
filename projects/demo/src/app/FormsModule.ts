@@ -48,6 +48,6 @@ export class FormsModule extends FormsCoreModule implements OnInit
 
 	public test()
 	{
-		FormsModule.get().getApplication().showform(Fields);
+		FormsModule.get().showform(Fields);
 	}
 }
